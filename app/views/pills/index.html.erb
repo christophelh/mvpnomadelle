@@ -40,10 +40,10 @@
 
 
 
-<%#= form_tag import_pills_path, multipart: true do %>
-  <%#= file_field_tag :file %>
-  <%#= submit_tag "Import" %>
-<%# end %>
+<%= form_tag import_pills_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 
 
 
