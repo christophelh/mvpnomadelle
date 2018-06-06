@@ -8,7 +8,7 @@
     <h1>Find the right pill</h1>
     <h2>Travel protected</h2>
     <button type="button" class="btn btn-info btn-lg">
-      <a href="#search">Begin</a>
+      <a href="#search">Search</a>
     </button>
   </div>
 
@@ -34,7 +34,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title" id="#results"><%= n.country %></h5>
-        <p class="card-text"><%= n.name %></p>
+        <p class="card-text">Name of the emergency pill: <%= n.name.capitalize %></p>
         <a href="#" class="btn btn-info">Collect at the neareast pharmacy</a>
       </div>
     </div>
