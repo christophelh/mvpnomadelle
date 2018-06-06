@@ -1,20 +1,24 @@
 
 
 
-<header class="banner" style="background-image: url('<%= image_path("bg.jpg")%>');">
+<header class="banner" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(28,239,255,0.4) 50%), url('<%= image_path 'bg1.jpg' %>');">
 
   <div class="tagline">
-    <h1>Find your pill</h1>
+    <%= image_tag 'logo.png', size: "256x120" %>
+    <h1>Find the right pill</h1>
     <h2>Travel protected</h2>
+    <button type="button" class="btn btn-info btn-lg">
+      <a href="#search">Begin</a>
+    </button>
   </div>
 
 </header>
 
-<section class="search">
+<section class="search" id="search">
   <div class="row">
   <div class="col-sm-6 offset-sm-3">
   <%= form_tag pills_path, method: :get do %>
-  <%= text_field_tag :query, params[:query], class: "form-control form-control-lg", placeholder: "Find your pill or country where you travel"%>
+  <%= text_field_tag :query, params[:query], class: "form-control form-control-lg", placeholder: "What's your country ?"%>
   <% end %>
 </div>
 </div>
@@ -29,9 +33,9 @@
   <div class="col-sm-6 offset-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><%= n.name %></h5>
-        <p class="card-text"><%= n.country %></p>
-        <a href="#" class="btn btn-primary">Collect at the neareast pharmacy</a>
+        <h5 class="card-title"><%= n.country %></h5>
+        <p class="card-text"><%= n.name %></p>
+        <a href="#" class="btn btn-info">Collect at the neareast pharmacy</a>
       </div>
     </div>
   </div>
