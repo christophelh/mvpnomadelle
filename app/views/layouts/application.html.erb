@@ -9,9 +9,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+
     <nav class="navbar navbar-light bg-info">
       <a class="navbar-brand" href="">
 
@@ -20,5 +22,9 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASokQC9YJEWZ1JDGVmU7F7vcU9_SGnbR8&&callback=initMap">
+    </script>
+
   </body>
 </html>

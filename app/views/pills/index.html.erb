@@ -1,6 +1,4 @@
 
-
-
 <header class="banner" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(28,239,255,0.4) 50%), url('<%= image_path 'bg1.jpg' %>');">
 
   <div class="tagline">
@@ -12,7 +10,16 @@
     </button>
   </div>
 
+<!--   <div class="social_button">
+    <a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+    <a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+  </div> -->
+</div>
+
 </header>
+
+
+
 
 <section class="search" id="search">
   <div class="row">
@@ -25,22 +32,50 @@
 </section>
 
 
-  <% @pills.each do |n| %>
+<div class="container">
+  <div class="row">
+    <% @pills.each do |n| %>
+      <div class="col-xs-12 col-md-6">
+            <div class="card-body" id="card-body">
+              <h5 class="card-title" id="#results"><%= n.country %></h5>
+              <p class="card-text">Name of the emergency pill </br><%= n.name.capitalize %></p>
+            <!--     <button onclick="getLocation()"> -->
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                   See Pharmacies near you
+                 </button>
+
+                </button>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
 
 
-
-<div class="row">
-  <div class="col-sm-6 offset-sm-3">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title" id="#results"><%= n.country %></h5>
-        <p class="card-text">Name of the emergency pill: <%= n.name.capitalize %></p>
-        <a href="#" class="btn btn-info">Collect at the neareast pharmacy</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div id="map">test</div>
       </div>
     </div>
   </div>
 </div>
- <% end %>
+
+
+
+
 
 
 
@@ -50,6 +85,6 @@
 <% end %>
 
 
-
+<!-- https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.486251599999996,13.430049799999999&radius=1500&type=pharmacy&keyword=pharmacy&key=AIzaSyASokQC9YJEWZ1JDGVmU7F7vcU9_SGnbR8 -->
 
 
