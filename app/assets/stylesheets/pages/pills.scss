@@ -3,10 +3,19 @@
     font-size:64px;
   }
 
-
   a{
-    color:white;
+    color: white;
   }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+
+.container_home{
+  margin-right: 0px;
+  margin-left: 0px;
+}
 
 .card-list{
   width: 100%;
@@ -169,3 +178,49 @@
         position: static !important;
       }
 
+
+.service4{
+  height: 200px;
+  background-image: url(bg1bis.jpg);
+  text-align: center;
+  padding-top:3em;
+  background-position-x: 50%;
+  background-position-y: 27%;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+
+}
+
+.service2{
+  height: 200px;
+  background-image: url(bg2.jpg);
+  text-align: center;
+  padding-top:3em;
+  background-position-x: 81%;
+  background-position-y: 25%;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+
+}
+
+.service3{
+  height: 200px;
+  background-image: url(bg3.jpg);
+  text-align: center;
+  padding-top:3em;
+  background-position-x: 62%;
+  background-position-y: 43%;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.service1{
+  height: 200px;
+  background-image: url(bg.jpg);
+  text-align: center;
+  padding-top:3em;
+  background-position-x: 52%;
+  background-position-y: 63%;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
