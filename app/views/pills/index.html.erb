@@ -1,11 +1,11 @@
 
-<header class="banner" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(28,239,255,0.4) 50%), url('<%= image_path 'bg1.jpg' %>');">
+<header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
 
   <div class="tagline">
     <%= image_tag 'logo.png', size: "256x120" %>
     <h1>Find the right emergency pill</h1>
     <h2>Travel protected</h2>
-    <button type="button" class="btn btn-info btn-lg">
+    <button type="button" class="btn btn-info boutton">
       <a href="#search">Search</a>
     </button>
   </div>
@@ -39,7 +39,7 @@
               <h5 class="card-title" id="#results"><%= n.country %></h5>
               <p class="card-text">Name of the emergency pill </br><%= n.name.capitalize %></p>
             <!--     <button onclick="getLocation()"> -->
-                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
+                 <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
                    See Pharmacies near you
 
                  </button>
