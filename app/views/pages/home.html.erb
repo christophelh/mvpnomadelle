@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<header class="banner" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(28,239,255,0.4) 50%), url('<%= image_path 'bg1.jpg' %>');">
+
+  <div class="tagline">
+    <%= image_tag 'logo.png', size: "256x120" %>
+    <h1>Find the right pill</h1>
+    <h2>Travel protected</h2>
+    <div class="service">
+      <button type="button" class="btn btn-info btn-lg">
+        <%= link_to "Emergency Pill", pills_path(@pills) %>
+      </button>
+      <button type="button" class="btn btn-info btn-lg">
+        <%= link_to "Women's Pill", pills_path(@pills) %>
+      </button>
+    </div>
+  </div>
+
+<!--   <div class="social_button">
+    <a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+    <a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+  </div> -->
+</div>
+
+</header>

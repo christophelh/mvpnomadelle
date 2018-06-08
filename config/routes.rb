@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
-root to:"pills#index"
+root to:"pages#home"
 end

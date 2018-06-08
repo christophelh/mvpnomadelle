@@ -7,7 +7,7 @@ class PillsController < ApplicationController
               sql_query = "name ILIKE :query OR country ILIKE :query"
               @pills = Pill.where(sql_query, query: "%#{params[:query]}%")
           else
-            @pills = Pill.all
+            @pills = Pill.all.sort
           end
         end
 
