@@ -1,0 +1,26 @@
+.boutton{
+    color: #fff;
+    background-color: #d70f64;
+    border-color: #d70f64;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    height: 48px;
+    border: 1px solid;
+    border-radius: unset;
+    padding: 0 15px;
+    line-height: 46px;
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+    transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+
+  }
+

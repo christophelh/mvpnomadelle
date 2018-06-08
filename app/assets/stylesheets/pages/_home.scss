@@ -1,1 +1,106 @@
 // Specific CSS for your home-page
+  html{
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  h1{
+    font-size:42px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: white;
+  }
+
+  h2{
+    font-size:36px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: white;
+  }
+
+  h3{
+    font-size:28px;
+  }
+
+
+  p{
+    font-family: $body-font;
+    color: white;
+    font-size: 18px;
+  }
+
+  i{
+    color: white;
+  }
+
+
+  a{
+    color: white;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+
+.pink-bar-top {
+    height: 44px;
+    background-color: #d70f64;
+    color: #fff;
+}
+
+.banner{
+  text-align: center;
+  background-size: cover;
+  text-align: center;
+  opacity: 0.8;
+  height:100vh;
+  background-position: 65%;
+  background-size: cover;
+  text-align: center;
+}
+
+
+.tagline{
+  padding-top: 18em;
+}
+
+
+// Service section
+
+.container_service{
+  margin-right: 15px;
+  margin-left: 0px;
+}
+
+.service_box{
+  height: 300px;
+  text-align: center;
+  padding:3em;
+}
+
+.service4{
+
+  background-position-x: 50%;
+  background-position-y: 68%;
+}
+
+.service2{
+  background-position-x: 81%;
+  background-position-y: 25%;
+
+}
+
+.service3{
+
+  background-position-x: 62%;
+  background-position-y: 43%;
+
+}
+
+.service1{
+
+  background-position-x: 52%;
+  background-position-y: 63%;
+}
+
+// End
