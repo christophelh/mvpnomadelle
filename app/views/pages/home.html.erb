@@ -2,9 +2,12 @@
 
   <div class="tagline">
 
-    <h1>Find the right pill</h1>
-    <h2>Travel protected</h2>
-    <%= image_tag 'logo.png', size: "256x120" %>
+
+    <h1>take care of your body and sexuality while on the road</h1>
+    <button type="button" class="boutton">
+      <i class="fa fa-play" aria-hidden="true"></i>
+      <a href="#service">START</a>
+    </button>
     <div class="service">
     </div>
   </div>
@@ -20,29 +23,35 @@
 </header>
 
 
-<div class="container_service">
+<div class="container_service" id="service">
   <div class="row">
     <div class="col-xs-12 col-sm-6 service_box service1" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(255,28,217,0.15) 50%), url('<%= image_path 'bg3.jpg' %>');">
       <%= link_to pills_path(@pills)  do %>
-      <h2>Emergency Pill</h2>
+      <h2>CONTRACEPTION</h2>
       <i class="fas fa-pills fa-3x"></i>
-      <p>A new search experience built for recruiters to identify prior candidates that could be a good match to new roles.</p>
+      <p>Emergency Contraception options anywhere in the world</p>
     </div>
     <% end  %>
 
     <div class="col-xs-12 col-sm-6 service_box service2" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(255,28,217,0.15) 50%), url('<%= image_path 'bg2.jpg' %>');">
-      <h2>Women Pill</h2>
+      <h2>CONTRACEPTION</h2>
         <i class="fas fa-pills fa-3x"></i>
-        <p>A new search experience built for recruiters to identify prior candidates that could be a good match to new roles.</p>
+        <p>Regular Contraception options anywhere in the world</p>
       <p><span style="font-weight: bold; ">(coming soon)</span></p>
       </div>
 
     <div class="w-100"></div>
 
-    <div class="col-xs-12 col-sm-6 service_box service3" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(255,28,217,0.15) 50%), url('<%= image_path 'bg5.jpg' %>');"><h2>OBGYN</h2>
+    <div class="col-xs-12 col-sm-6 service_box service3" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(255,28,217,0.15) 50%), url('<%= image_path 'bg5.jpg' %>');">
+      <h2>NOMAD PILL TRACKER</h2>
+     <i class="far fa-clock fa-3x"></i>
+      <p>Make sure you keep track of your period and pill while you travel and change time zones! </p>
       <p><span style="font-weight: bold; ">(coming soon)</span></p></div>
 
     <div class="col-xs-12 col-sm-6 service_box service4" style="background-image: linear-gradient(-225deg, rgba(192,192,170,0.4) 0%, rgba(255,28,217,0.15) 50%), url('<%= image_path 'bg.jpg' %>');">
-      <h2>OBGYN</h2><p><span style="font-weight: bold; ">(coming soon)</span></p></div>
+      <h2>WOMEN'S TRAVEL INSURANCE</h2>
+      <i class="fas fa-file-medical fa-3x"></i>
+      <p>A travel insurance designed by women for women. Our society is global and nomad, our women's health services are too.</p>
+      <p><span style="font-weight: bold; ">(coming soon)</span></p></div>
   </div>
 </div>
