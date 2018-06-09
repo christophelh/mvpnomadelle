@@ -75,7 +75,11 @@
 .service_box{
   height: 320px;
   text-align: center;
-  padding:3em;
+  padding:2em;
+  span{
+    font-style: italic;
+    font-size: 13px;
+  }
 }
 
 .service4{
@@ -106,3 +110,19 @@
 }
 
 // End
+
+
+@media only screen and (max-width: 600px) {
+
+    h1{
+      font-size: 35px
+    }
+
+    h2{
+      font-size: 28px;
+    }
+
+    .tagline {
+            padding: 14em 0em;
+    }
+}
