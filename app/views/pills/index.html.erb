@@ -6,7 +6,7 @@
         <%#= image_tag "logo.png", size:"" %>
         <h3>Find the right emergency pill in any country</h3>
         <%= form_tag pills_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
+        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Enter the name of a country?"%>
 
 
         <% end %>
@@ -16,7 +16,7 @@
 </header>
 
 <% if params[:query].present? %>
-<div class="container" id="results">
+  <div class="container" id="results">
   <div class="row">
     <% @pills.each do |n| %>
     <div class="col-xs-12 col-md-4">
@@ -24,9 +24,6 @@
         <h5 class="card-title" id="#results">
           <%= n.country %></h5>
           <p class="card-text"></br><%= n.name.capitalize %></p>
-
-
-          <!--     <button onclick="getLocation()"> -->
            <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
              See Pharmacies near you
            </button>
@@ -35,7 +32,6 @@
        <% end %>
      </div>
    </div>
-
 <%end %>
 
 
@@ -49,7 +45,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
         <div class="modal-body">
           <div>
             <div id="map">test</div>
@@ -57,9 +52,11 @@
         </div>
       </div>
     </div>
+</div>
 
 
-    <%#= form_tag import_pills_path, multipart: true do %>
+
+<%#= form_tag import_pills_path, multipart: true do %>
     <%#= file_field_tag :file %>
     <%#= submit_tag "Import" %>
     <%# end %>
