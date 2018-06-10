@@ -4,14 +4,17 @@
     <div class="row">
       <div class="col-sm-6 offset-sm-3">
         <%= form_tag pills_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
+        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
+
+
         <% end %>
       </div>
     </div>
   </div>
 </header>
 
-<div class="container">
+<% if params[:query].present? %>
+<div class="container" id="results">
   <div class="row">
     <% @pills.each do |n| %>
     <div class="col-xs-12 col-md-6">
@@ -28,6 +31,8 @@
        <% end %>
      </div>
    </div>
+
+<%end %>
 
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -48,6 +53,7 @@
         </div>
       </div>
     </div>
+
 
     <%#= form_tag import_pills_path, multipart: true do %>
     <%#= file_field_tag :file %>
