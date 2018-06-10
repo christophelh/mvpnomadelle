@@ -15,5 +15,13 @@
 //   });
 // });
 
+// id=result is added if the query not empty
+
+
+// document.addEventListener("enter", (event) => {
+  document.querySelector('#results').scrollIntoView({
+    behavior: 'smooth'
+  });
+// });
 
 

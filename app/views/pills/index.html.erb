@@ -3,6 +3,8 @@
   <div class="tagline">
     <div class="row">
       <div class="col-sm-6 offset-sm-3">
+        <%#= image_tag "logo.png", size:"" %>
+        <h3>Find the right emergency pill in any country</h3>
         <%= form_tag pills_path, method: :get do %>
         <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
 
@@ -17,11 +19,12 @@
 <div class="container" id="results">
   <div class="row">
     <% @pills.each do |n| %>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-4">
       <div class="card-body" id="card-body">
         <h5 class="card-title" id="#results">
           <%= n.country %></h5>
           <p class="card-text"></br><%= n.name.capitalize %></p>
+
 
           <!--     <button onclick="getLocation()"> -->
            <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
@@ -36,7 +39,7 @@
 <%end %>
 
 
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
