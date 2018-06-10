@@ -36,11 +36,32 @@
        }(document, 'script', 'facebook-jssdk'));
     </script> -->
 
-    <nav class="navbar navbar-light pink-bar-top d">
-      <a class="navbar-brand" href="">
-        <%#= image_tag 'logo.png', size: "128x40" %>
-      </a>
-    </nav>
+    <div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <!-- img src="images/logo.png" alt="logo"> -->
+
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">FAQ</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <ul class="dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
