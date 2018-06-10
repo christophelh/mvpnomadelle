@@ -1,60 +1,37 @@
 
 <header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
-
   <div class="tagline">
-    <%= image_tag 'logo.png', size: "256x120" %>
-    <h1>Find the right emergency pill</h1>
-    <h2>Travel protected</h2>
-    <button type="button" class="btn btn-info boutton">
-      <i class="fa fa-search" aria-hidden="true"></i>
-      <a href="#search">Search</a>
-    </button>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <%= form_tag pills_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-<!--   <div class="social_button">
-    <a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-    <a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-  </div> -->
-</div>
-
 </header>
-
-
-
-<section class="search" id="search">
-  <div class="row">
-  <div class="col-sm-6 offset-sm-3">
-  <%= form_tag pills_path, method: :get do %>
-  <%= text_field_tag :query, params[:query], class: "form-control form-control-lg", placeholder: "Where are you travelling  ?"%>
-  <% end %>
-</div>
-</div>
-</section>
-
 
 <div class="container">
   <div class="row">
     <% @pills.each do |n| %>
-      <div class="col-xs-12 col-md-6">
-            <div class="card-body" id="card-body">
-              <h5 class="card-title" id="#results">
-                <%= n.country %></h5>
-              <p class="card-text"></br><%= n.name.capitalize %></p>
-            <!--     <button onclick="getLocation()"> -->
-                 <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
-                   See Pharmacies near you
-                 </button>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<!-- Button trigger modal -->
+    <div class="col-xs-12 col-md-6">
+      <div class="card-body" id="card-body">
+        <h5 class="card-title" id="#results">
+          <%= n.country %></h5>
+          <p class="card-text"></br><%= n.name.capitalize %></p>
+          <!--     <button onclick="getLocation()"> -->
+           <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
+             See Pharmacies near you
+           </button>
+         </div>
+       </div>
+       <% end %>
+     </div>
+   </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -63,23 +40,19 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div>
-          <div id="map">test</div>
+
+        <div class="modal-body">
+          <div>
+            <div id="map">test</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-
-
-
-
-
-<%= form_tag import_pills_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+    <%#= form_tag import_pills_path, multipart: true do %>
+    <%#= file_field_tag :file %>
+    <%#= submit_tag "Import" %>
+    <%# end %>
 
 
 
