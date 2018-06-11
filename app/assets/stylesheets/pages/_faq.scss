@@ -41,7 +41,7 @@
       &.active {
         background-color: #dd0060;
         font-weight: 700;
-        color: rgba(0,0,0,.87);
+        color: white;
       }
       &:last-of-type {
         border-bottom-left-radius: 2px;
@@ -72,14 +72,16 @@
     text-decoration: none;
   }
   .panel-heading {
-    background-color: #dd0060;
+    background-color: white;
     padding: 0 16px;
     line-height: 48px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
     color: rgba(0,0,0,.87);
+    border-bottom: 2px solid #dd0060;
     h2 {
       margin: 0;
+      color: #6c6c6c;
       padding: 14px 0 14px;
       font-size: 18px;
       font-weight: 400;
@@ -95,6 +97,8 @@
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     margin-top: 0;
+    padding: 1em;
+
     p {
       margin: 0 0 16px;
       color: #696969;
