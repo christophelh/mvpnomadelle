@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
 
 root to:"pages#home"
+get 'faq', to: 'pages#faq'
 end
