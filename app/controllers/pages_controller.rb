@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def faq
   end
+
+  def termsconditions
+  end
 end

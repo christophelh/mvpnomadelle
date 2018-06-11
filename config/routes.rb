@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
 root to:"pages#home"
 get 'faq', to: 'pages#faq'
+get 'termsconditions', to: 'pages#termsconditions'
 end
