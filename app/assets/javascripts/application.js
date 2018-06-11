@@ -19,7 +19,7 @@
 
 
 // document.addEventListener("enter", (event) => {
-  document.querySelector('#results').scrollIntoView({
+  document.querySelector('.summary').scrollIntoView({
     behavior: 'smooth'
   });
 // });
