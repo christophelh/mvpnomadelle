@@ -1,0 +1,29 @@
+<div class="col-xs-10 col-sm-6 offset-sm-3">
+
+  <%= form_tag(contraceptionpills_path, method: :get) do %>
+
+    <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Type a name of the pill?"%>
+
+    <%= text_field_tag :country , params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Type the name of your country?"%>
+
+    <%= submit_tag 'search' %>
+  <% end %>
+</div>
+
+
+  <div class="container" id="results">
+  <div class="row">
+    <% @contraceptionpills.each do |n| %>
+    <div class="col-xs-12 col-md-12">
+      <div class="card-body" id="card-body">
+        <h5 class="card-title" id="#results">
+          <%= n.country %></h5>
+          <p class="card-text"><%= n.equivalent %></p>
+         </div>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+
+

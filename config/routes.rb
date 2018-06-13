@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
  resources :pills do
+    # collection { post :import }
+  end
+
+   resources :contraceptionpills do
     collection { post :import }
   end
 

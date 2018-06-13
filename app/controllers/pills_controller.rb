@@ -12,8 +12,10 @@ class PillsController < ApplicationController
         end
 
 
-        def import
-          Pill.import(params[:file].path)
-          redirect_to root_url , notice: "Data imported"
-        end
+        # def import
+        #   Pill.import(params[:file].path)
+        #   redirect_to root_url , notice: "Data imported"
+        # end
 end
+
+
