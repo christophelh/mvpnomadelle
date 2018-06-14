@@ -7,5 +7,10 @@ class ContraceptionpillsController < ApplicationController
           @contraceptionpills = Contraceptionpill.all
         end
       end
+
+  def import
+    Contraceptionpill.import(params[:file].path)
+    redirect_to root_url , notice: "Data imported"
+  end
 end
 
