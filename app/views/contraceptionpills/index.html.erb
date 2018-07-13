@@ -1,29 +1,49 @@
-<div class="col-xs-10 col-sm-6 offset-sm-3">
 
-  <%= form_tag(contraceptionpills_path, method: :get) do %>
+<header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
+  <div class="tagline">
+    <div class="row">
+      <div class="col-xs-10 col-sm-6 offset-sm-3">
+        <h3>Contraception pill in any country</h3>
+        <%= form_tag contraceptionpills_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Type a country?"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Type a name of the pill?"%>
-
-    <%= text_field_tag :country , params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Type the name of your country?"%>
-
-    <%= submit_tag 'search now' %>
+<% if params[:query].present? %>
+<div class="summary">
+  <% if @contraceptionpills.count == 0%>
+   <h4>There are <%= @contraceptionpills.count%> types(s) of emergency pills available in <%= params[:query].capitalize %></h4>
   <% end %>
 </div>
-
-
   <div class="container" id="results">
   <div class="row">
     <% @contraceptionpills.each do |n| %>
-    <div class="col-xs-12 col-md-12">
+
+    <div class="col-xs-12 col-md-4">
       <div class="card-body" id="card-body">
         <h5 class="card-title" id="#results">
           <%= n.country %></h5>
+          <p class="card-text"><i class="fas fa-pills"> </i><%= n.name %></p>
+          <h5>Equivalent</h5>
           <p class="card-text"><%= n.equivalent %></p>
+           <button type="button" class="btn btn-info boutton" data-toggle="modal" data-target="#exampleModalCenter">
+             See Pharmacies near you
+           </button>
          </div>
        </div>
        <% end %>
      </div>
    </div>
+<%end %>
+
+
+
+
+
+
 
 
 
