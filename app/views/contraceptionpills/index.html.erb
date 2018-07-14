@@ -1,17 +1,24 @@
 
 <header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
   <div class="tagline">
-    <div class="row">
-      <div class="col-xs-10 col-sm-6 offset-sm-3">
-        <h3>Contraception pill in any country</h3>
-        <%= form_tag contraceptionpills_path, method: :get do %>
+    <h1>take care of your body and sexuality while on the road</h1>
+
+   <%= form_tag contraceptionpills_path, method: :get do %>
+   <div class="form-row">
+
+      <div class="col-md-4 offset-md-2">
         <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Brand?"%>
-        <%= text_field_tag :country, params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Country?"%>
-        <%= submit_tag "Search ", :query => nil %>
-        <% end %>
       </div>
+      <div class="col-md-4">
+        <%= text_field_tag :country, params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Country?"%>
+      </div>
+        <%= submit_tag "Search ", :query => nil, class:"boutton" %>
+      </div>
+
     </div>
-  </div>
+
+    <% end %>
+ </div>
 </header>
 
 <%#= form_tag import_contraceptionpills_path, multipart: true do %>
@@ -31,7 +38,7 @@
 
   <div class="container" id="results">
     <div class="row">
-      <table class="table">
+      <table class="table table-striped">
 
         <thead>
           <tr>
