@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
   html{
     -webkit-font-smoothing: antialiased;
+
+  }
+
+  body{
+    background-color:#F6F7F9;
   }
 
 
@@ -41,9 +46,9 @@
     }
   }
 
-input{
-  border-bottom: 3px solid #da0062;
-}
+// input{
+//   border-bottom: 3px solid #da0062;
+// }
 
 
 .pink-bar-top {
@@ -65,15 +70,15 @@ input{
 
 
 .tagline{
-  padding: 14em 13em;
+  padding: 14em 14em;
+
 }
 
 
 // Service section
 
 .container_service{
-  margin-right: 15px;
-  margin-left: 0px;
+  margin: 73px;
 }
 
 .service_box{
@@ -123,7 +128,31 @@ input{
   background-position-y: 36%;
   padding-top: 4em;
 }
+.subscribe{
+    background: #fff;
+    padding: 20px 20px 30px 20px;
+    margin: 60px;
+    text-align: center;
+  h2{
+    color: black;
+  }
+}
+.subscribe input{
+    height: 42px;
+    width: 300px;
+    padding-left: 15px;
+    font-size: 14px;
+  }
 
+button {
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    margin-left: 20px;
+    background-color:#e03980;
+  }
 // End
 
 
@@ -141,5 +170,13 @@ input{
             padding: 14em 0em;
     }
 
+    .subscribe{
+      margin: 0px;
+
+    }
+
+    .container_service{
+      margin: 0px;
+    }
 
 }

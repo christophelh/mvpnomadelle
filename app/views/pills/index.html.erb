@@ -2,10 +2,11 @@
 <header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
   <div class="tagline">
     <div class="row">
-      <div class="col-xs-10 col-sm-6 offset-sm-3">
-        <h3>Emergency pill in any country</h3>
+      <div class="col-xs-12">
+        <h1>Emergency pill in any country</h1>
         <%= form_tag pills_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Type a country?"%>
+        <%= text_field_tag :query, params[:query], size: 55, id:"formCountry", class: "form-control form-control-lg", placeholder: "Type a country?"%>
+        <%= submit_tag "Search ", :query => nil, class:"boutton" %>
         <% end %>
       </div>
     </div>
