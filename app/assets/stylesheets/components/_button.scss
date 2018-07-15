@@ -21,10 +21,15 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
-
   }
 
 
 .boutton:hover{
   transform: scale(.9);
+}
+
+@media only screen and (max-width: 600px) {
+    .boutton {
+       margin: auto;
+    }
 }
