@@ -6,15 +6,18 @@
    <%= form_tag contraceptionpills_path, method: :get do %>
    <div class="form-row">
 
-      <div class="col-md-4 offset-md-2">
+      <div class="col-md-4">
         <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Brand?"%>
       </div>
       <div class="col-md-4">
         <%= text_field_tag :country, params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Country?"%>
       </div>
-        <%= submit_tag "Search ", :query => nil, class:"boutton" %>
-     </div>
+      <div class="col-md-4">
+        <%= text_field_tag :ingredient, params[:ingredient], size: 75, class: "form-control form-control-lg", placeholder: "Ingredients?"%>
+      </div>
 
+     </div>
+      <%= submit_tag "Search ", :query => nil, class:"boutton" %>
     </div>
 
     <% end %>
