@@ -21,10 +21,11 @@
  </div>
 </header>
 
-<%= form_tag import_contraceptionpills_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+
+<%#= form_tag import_contraceptionpills_path, multipart: true do %>
+  <%#= file_field_tag :file %>
+  <%#= submit_tag "Import" %>
+<%# end %>
 
 <% if params[:query].present? %>
   <div class="summary">
@@ -33,8 +34,6 @@
       <%= params[:query].capitalize %></h4>
     <% end %>
   </div>
-
-
 
   <div class="container" id="results">
     <div class="row">
