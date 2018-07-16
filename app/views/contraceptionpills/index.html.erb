@@ -7,13 +7,16 @@
    <div class="form-row">
 
       <div class="col-md-4">
-        <%= text_field_tag :query, params[:query], size: 75, class: "form-control form-control-lg", placeholder: "Brand?"%>
+        <% @dedup_pill_brand = @contraceptionpills.map { |e| e.name  }.uniq.compact %>
+        <%= select_tag :query, options_for_select(@dedup_pill_brand),class: "form-control form-control-lg", placeholder: "Brand?" %>
       </div>
       <div class="col-md-4">
-        <%= text_field_tag :country, params[:country], size: 75, class: "form-control form-control-lg", placeholder: "Country?"%>
+        <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact %>
+        <%= select_tag :country, options_for_select(@dedup_pill_country),class: "form-control form-control-lg", placeholder: "Country?" %>
       </div>
       <div class="col-md-4">
-        <%= text_field_tag :ingredient, params[:ingredient], size: 75, class: "form-control form-control-lg", placeholder: "Ingredients?"%>
+        <% @dedup_pill_ingredient = @contraceptionpills.map { |e| e.ingredient  }.uniq.compact %>
+        <%= select_tag :ingredient, options_for_select(@dedup_pill_ingredient),class: "form-control form-control-lg", placeholder: "Ingredient?" %>
       </div>
 
      </div>
@@ -30,13 +33,12 @@
   <%#= submit_tag "Import" %>
 <%# end %>
 
-<% if params[:query].present? %>
-  <div class="summary">
-    <% if @contraceptionpills.count == 0%>
-      <h4>There are <%= @contraceptionpills.count%> types(s) of emergency pills available in
-      <%= params[:query].capitalize %></h4>
-    <% end %>
-  </div>
+.<div class="summary">
+  <% if params[:query].present? %>
+    <p>
+    This database has been built using as a reference the information found on Vademecum and drugs.com. We are currently working on  expanding the brand equivalent database. To optimise your search we recommend using the ingredient search, so you can find the brands containing your desired ingredients in your country of choice.
+    </p>
+</div>
 
   <div class="container" id="results">
     <div class="row">
