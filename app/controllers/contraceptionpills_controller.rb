@@ -1,7 +1,7 @@
 class ContraceptionpillsController < ApplicationController
       def index
         if params[:query].present?
-          sql_query = "(country ILIKE :country) and (name ILIKE :query) OR (ingredient ILIKE :ingredient) AND (country ILIKE :country) OR (country ILIKE :country) and (name ILIKE :query) AND (ingredient ILIKE :ingredient)"
+          sql_query = "(ingredient ILIKE :ingredient) AND (country ILIKE :country) OR (country ILIKE :country) and (name ILIKE :query) AND (ingredient ILIKE :ingredient)"
           @contraceptionpills = Contraceptionpill.where(sql_query, query: "%#{params[:query]}%", country: "%#{params[:country]}%" , ingredient: "%#{params[:ingredient]}%")
         else
           @contraceptionpills = Contraceptionpill.all
