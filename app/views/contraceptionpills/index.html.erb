@@ -32,7 +32,7 @@
 </header>
 
 
-
+<% if params[:country].present? %>
 
 <div class="summary">
     <p>
@@ -40,6 +40,7 @@
     </p>
 
     <div>
+      <p>Filter your results</p>
       <%= form_tag contraceptionpills_path, method: :get do %>
       <div class="form-row">
 
@@ -62,7 +63,7 @@
          <%= submit_tag "Search ", :query => nil, class:"boutton" %>
        </div>
 
-
+       <% end %>
     </div>
 
 
