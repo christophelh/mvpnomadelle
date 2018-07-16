@@ -1,3 +1,9 @@
+<%#= form_tag import_contraceptionpills_path, multipart: true do %>
+  <%#= file_field_tag :file %>
+  <%#= submit_tag "Import" %>
+<%# end %>
+
+
 
 <header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
   <div class="tagline">
@@ -7,16 +13,14 @@
    <div class="form-row">
 
       <div class="col-md-4">
-        <% @dedup_pill_brand = @contraceptionpills.map { |e| e.name  }.uniq.compact.sort %>
-        <%= select_tag :query, options_for_select(@dedup_pill_brand),class: "form-control form-control-lg", placeholder: "Brand?" %>
+
       </div>
       <div class="col-md-4">
         <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact.sort %>
         <%= select_tag :country, options_for_select(@dedup_pill_country),class: "form-control form-control-lg", placeholder: "Country?" %>
       </div>
       <div class="col-md-4">
-        <% @dedup_pill_ingredient = @contraceptionpills.map { |e| e.ingredient  }.uniq.compact %>
-        <%= select_tag :ingredient, options_for_select(@dedup_pill_ingredient),input_html: { "data-placeholder" => "..." },class: "form-control form-control-lg" %>
+
       </div>
 
      </div>
@@ -28,16 +32,41 @@
 </header>
 
 
-<%#= form_tag import_contraceptionpills_path, multipart: true do %>
-  <%#= file_field_tag :file %>
-  <%#= submit_tag "Import" %>
-<%# end %>
 
-.<div class="summary">
-  <% if params[:query].present? %>
+
+<div class="summary">
     <p>
     This database has been built using as a reference the information found on Vademecum and drugs.com. We are currently working on  expanding the brand equivalent database. To optimise your search we recommend using the ingredient search, so you can find the brands containing your desired ingredients in your country of choice.
     </p>
+
+    <div>
+      <%= form_tag contraceptionpills_path, method: :get do %>
+      <div class="form-row">
+
+         <div class="col-md-4">
+           <% @dedup_pill_brand = @contraceptionpills.map { |e| e.brand  }.uniq.compact.sort %>
+           <%= select_tag :brand, options_for_select(@dedup_pill_brand), prompt: "Select your brand",class: "form-control form-control-lg"%>
+         </div>
+
+         <div class="col-md-4">
+           <% @dedup_pill_ingredient = @contraceptionpills.map { |e| e.ingredient  }.uniq.compact %>
+
+           <%= select_tag :ingredient, options_for_select(@dedup_pill_ingredient), prompt: "Select an Ingredient", class: "form-control form-control-lg"%>
+         </div>
+         <div class="col-md-4">
+           <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact.sort %>
+           <%= select_tag :country, options_for_select(@dedup_pill_country),class: "form-control form-control-lg", placeholder: "Country?" %>
+         </div>
+
+        </div>
+         <%= submit_tag "Search ", :query => nil, class:"boutton" %>
+       </div>
+
+
+    </div>
+
+
+
 </div>
 
   <div class="container" id="results">
@@ -55,7 +84,7 @@
         <tbody>
             <% @contraceptionpills.each do |n| %>
           <tr>
-              <td><%= n.name %></td>
+              <td><%= n.brand %></td>
               <td><%= n.country%></td>
               <td><%= n.ingredient%></td>
               <td><%= n.equivalent %></td>
