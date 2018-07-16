@@ -7,19 +7,19 @@
 
 <header class="banner" style="background-image: url('<%= image_path 'bg1.jpg' %>');">
   <div class="tagline">
-    <h1>take care of your body and sexuality while on the road</h1>
+    <h1>SELECT  THE COUNTRY FOR YOUR CONTRACEPTIVE PILL SEARCH</h1>
 
    <%= form_tag contraceptionpills_path, method: :get do %>
    <div class="form-row">
 
-      <div class="col-md-4">
+      <div class="col-md-3">
 
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact.sort %>
         <%= select_tag :country, options_for_select(@dedup_pill_country),class: "form-control form-control-lg", placeholder: "Country?" %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
 
       </div>
 
