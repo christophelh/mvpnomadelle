@@ -7,16 +7,16 @@
    <div class="form-row">
 
       <div class="col-md-4">
-        <% @dedup_pill_brand = @contraceptionpills.map { |e| e.name  }.uniq.compact %>
+        <% @dedup_pill_brand = @contraceptionpills.map { |e| e.name  }.uniq.compact.sort %>
         <%= select_tag :query, options_for_select(@dedup_pill_brand),class: "form-control form-control-lg", placeholder: "Brand?" %>
       </div>
       <div class="col-md-4">
-        <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact %>
+        <% @dedup_pill_country = @contraceptionpills.map { |e| e.country  }.uniq.compact.sort %>
         <%= select_tag :country, options_for_select(@dedup_pill_country),class: "form-control form-control-lg", placeholder: "Country?" %>
       </div>
       <div class="col-md-4">
         <% @dedup_pill_ingredient = @contraceptionpills.map { |e| e.ingredient  }.uniq.compact %>
-        <%= select_tag :ingredient, options_for_select(@dedup_pill_ingredient),class: "form-control form-control-lg", placeholder: "Ingredient?" %>
+        <%= select_tag :ingredient, options_for_select(@dedup_pill_ingredient),input_html: { "data-placeholder" => "..." },class: "form-control form-control-lg" %>
       </div>
 
      </div>
